@@ -66,10 +66,9 @@ body {
     cursor: pointer;
 }
 
-.nav-actions.btn-primary:hover {
+.nav-actions .btn-primary:hover {
     background: #c40060;
 }
-
 .btn-secondary {
     color: white;
     text-decoration: none;
@@ -127,22 +126,26 @@ body {
     gap: 30px;
     flex-wrap: wrap;
 }
-.btn-prem{
-    background: #e60073;
+.btn-prem {
+    background: black;
     color: white;
     padding: 10px 18px;
     border-radius: 6px;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    
+    display: inline-block;
 }
-.btn-outline{
- border: 2px solid rgb(171, 165, 165);
- border-radius: 15px;
- padding: 10px;
- margin-left: 10px;
- text-decoration: none;
+
+.btn-outline {
+    background: transparent;
+    color: #e60073;
+    padding: 10px 18px;
+    border-radius: 6px;           /* Same radius */
+    border: 2px solid #e60073;    /* Pink border added */
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
 
