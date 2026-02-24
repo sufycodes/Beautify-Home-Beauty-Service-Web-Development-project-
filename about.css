@@ -1,0 +1,196 @@
+/* ================================================== */
+/*             ABOUT PAGE - SPECIFIC STYLES           */
+/* ================================================== */
+/* This file contains styles ONLY for about.php       */
+/* It works together with the main style.css file     */
+/* ================================================== */
+
+
+/* ================================================== */
+/*                   PAGE HERO BANNER                 */
+/* ================================================== */
+
+.about-hero {
+    background: linear-gradient(135deg, #e60073, #ff4da6);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.about-hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* ================================================== */
+/*                  OUR STORY SECTION                 */
+/* ================================================== */
+
+.our-story {
+    padding: 70px 60px;
+    background-color: #ffffff;
+}
+
+/* Two column layout: text on left, stats on right */
+.story-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Left column: story text */
+.story-text h2 {
+    font-size: 2rem;
+    color: #e60073;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Right column: stat boxes grid */
+.story-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Individual stat box */
+.stat-box {
+    background: #fff0f5;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid #ffd6e8;
+    transition: 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(230, 0, 115, 0.1);
+}
+
+.stat-box i {
+    font-size: 28px;
+    color: #e60073;
+    margin-bottom: 10px;
+}
+
+.stat-box h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+
+/* ================================================== */
+/*                 OUR MISSION SECTION                */
+/* ================================================== */
+
+.our-mission {
+    background-color: #333;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.mission-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.mission-icon {
+    font-size: 40px;
+    color: #e60073;
+    margin-bottom: 20px;
+}
+
+.mission-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.mission-container p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+
+/* ================================================== */
+/*               CALL TO ACTION SECTION               */
+/* ================================================== */
+
+.about-cta {
+    background-color: #fff0f5;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.cta-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.cta-container p {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* ================================================== */
+/*          ACTIVE LINK IN NAVBAR (About)             */
+/* ================================================== */
+
+.active-link {
+    color: #e60073 !important;
+    border-bottom: 2px solid #e60073;
+    padding-bottom: 3px;
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    .about-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Stack story section to single column on mobile */
+    .story-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .our-story {
+        padding: 50px 20px;
+    }
+
+    .story-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}

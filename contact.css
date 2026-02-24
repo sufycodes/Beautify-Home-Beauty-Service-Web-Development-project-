@@ -1,0 +1,209 @@
+/* ================================================== */
+/*            CONTACT PAGE - SPECIFIC STYLES          */
+/* ================================================== */
+/* This file contains styles ONLY for contact.php     */
+/* It works together with the main style.css file     */
+/* ================================================== */
+
+
+/* ================================================== */
+/*                   PAGE HERO BANNER                 */
+/* ================================================== */
+
+.contact-hero {
+    background: linear-gradient(135deg, #e60073, #ff4da6);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* ================================================== */
+/*                 CONTACT MAIN SECTION               */
+/* ================================================== */
+
+.contact-section {
+    padding: 70px 60px;
+    background-color: #ffffff;
+}
+
+/* Two column layout: info on left, form on right */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ================================================== */
+/*                   CONTACT INFO                     */
+/* ================================================== */
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: #e60073;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Each info row (icon + text) */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: #e60073;
+    margin-top: 3px;
+    min-width: 20px;
+}
+
+.info-item h4 {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Social icons inside contact info */
+.contact-info .social-icons {
+    margin-top: 10px;
+}
+
+
+/* ================================================== */
+/*                   CONTACT FORM                     */
+/* ================================================== */
+
+.contact-form {
+    background: #fff0f5;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #ffd6e8;
+}
+
+.contact-form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Each form field group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+/* Highlight field on focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e60073;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Send Message button */
+.btn-send {
+    width: 100%;
+    padding: 14px;
+    background: #e60073;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-send i {
+    margin-left: 8px;
+}
+
+.btn-send:hover {
+    background: #c40060;
+}
+
+
+/* ================================================== */
+/*          ACTIVE LINK IN NAVBAR (Contact)           */
+/* ================================================== */
+
+.active-link {
+    color: #e60073 !important;
+    border-bottom: 2px solid #e60073;
+    padding-bottom: 3px;
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .contact-section {
+        padding: 50px 20px;
+    }
+
+    /* Stack to single column on mobile */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}

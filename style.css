@@ -1,17 +1,36 @@
-/* ================= GLOBAL RESET ================= */
+/* ================================================== */
+/*                   GLOBAL RESET                     */
+/* ================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ================================================== */
+/*                     BODY                           */
+/* ================================================== */
+
 body {
     font-family: Arial, sans-serif;
-    background: #f8f8f8;
+    background-color: #fff0f5; /* Light pinkish background for general page areas */
 }
 
-/* ================= HEADER ================= */
 
+/* ================================================== */
+/*                     HEADER                         */
+/* ================================================== */
+
+/* Sticky header so it stays on top while scrolling */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Top title bar (pink strip above navbar) */
 .top-bar {
     background: #e60073;
     color: white;
@@ -19,8 +38,7 @@ body {
     font-weight: bold;
 }
 
-/* Navigation Container */
-/* Main nav container */
+/* Main navigation bar */
 .main-nav {
     display: flex;
     align-items: center;
@@ -31,7 +49,7 @@ body {
     position: relative;
 }
 
-/* Centered nav links container */
+/* Navigation links (centered in navbar) */
 .nav-links {
     list-style: none;
     display: flex;
@@ -49,65 +67,39 @@ body {
     font-weight: bold;
 }
 
-/* Nav buttons */
+/* Navigation action buttons (right side of navbar) */
 .nav-actions {
     margin-left: auto;
-    /* push to right */
     display: flex;
     gap: 15px;
 }
 
-.nav-actions .btn-primary {
-    background: #e60073;
+.btn-mybooking {
+    background: white;
+    color: black;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-booknow {
+    background: black;
     color: white;
     padding: 10px 18px;
     border-radius: 6px;
     text-decoration: none;
-    border: none;
     cursor: pointer;
 }
 
-.nav-actions .btn-primary:hover {
+.btn-booknow:hover {
     background: #c40060;
 }
 
-.btn-secondary {
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-}
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        position: static;
-        /* remove absolute on small screens */
-        transform: none;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .nav-actions {
-        width: 100%;
-        justify-content: flex-start;
-    }
-    .why-container h2 {
-        font-size: 2rem;
-    }
-
-    .why-container p {
-        font-size: 1rem;
-    }
-}
-
-/* ================= HERO SECTION ================= */
+/* ================================================== */
+/*                   HERO SECTION                     */
+/* ================================================== */
 
 .hero {
     padding: 80px 20px;
@@ -122,6 +114,7 @@ body {
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
+    color: #e60073;
 }
 
 .hero p {
@@ -129,6 +122,11 @@ body {
     color: #555;
 }
 
+.hero-content i {
+    color: pink;
+}
+
+/* Hero call-to-action buttons */
 .hero-buttons {
     padding-top: 10px;
     display: flex;
@@ -143,7 +141,6 @@ body {
     padding: 10px 18px;
     border-radius: 6px;
     text-decoration: none;
-    border: none;
     cursor: pointer;
     display: inline-block;
 }
@@ -153,39 +150,22 @@ body {
     color: #e60073;
     padding: 10px 18px;
     border-radius: 6px;
-    /* Same radius */
     border: 2px solid #e60073;
-    /* Pink border added */
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
 }
 
 
-
-/* ================= FEATURES ================= */
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    padding: 40px 40px;
-    text-align: center;
-}
-
-.feature-icon {
-    font-size: 30px;
-    color: #e60073;
-    margin-bottom: 15px;
-}
-
-/* ================= why choose us ================= */
+/* ================================================== */
+/*               WHY CHOOSE US SECTION                */
+/* ================================================== */
 
 .why-choose {
-    height: 30vh    ;             /* full screen height */
-    display: flex;              /* enable flexbox */
-    justify-content: center;    /* horizontal center */
-    align-items: center;        /* vertical center */
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #f9f9f9;
 }
@@ -201,59 +181,79 @@ body {
     color: #666;
 }
 
-/* OUR SERVICES HEADING SECTION */
 
+/* ================================================== */
+/*                  FEATURES SECTION                  */
+/* ================================================== */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 40px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 30px;
+    color: #e60073;
+    margin-bottom: 15px;
+}
+
+
+/* ================================================== */
+/*              OUR SERVICES HEADING                  */
+/* ================================================== */
 
 .services-heading {
     padding-top: 100px;
-    text-align: center;    /* center text */
+    text-align: center;
     background-color: #ffffff;
 }
 
 .services-container h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;   /* gap between title & text */
+    margin-bottom: 20px;
 }
 
 .services-container p {
     font-size: 1.1rem;
     color: #666;
-    max-width: 700px;      /* keeps text clean */
-    margin: 0 auto;        /* center paragraph block */
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 
-
-/* ================= SERVICES CARDS ================= */
+/* ================================================== */
+/*               SERVICE CARDS SECTION                */
+/* ================================================== */
 
 .services-section {
-    padding: 60px 40px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
+    padding: 80px 60px;
+    background-color: #ffffff;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
-/* Service Card */
+/* Individual service card */
 .service-card {
-    background: white;
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
+/* Card image container */
 .service-image {
     position: relative;
     height: 200px;
@@ -265,27 +265,211 @@ body {
     object-fit: cover;
 }
 
+/* Category label badge on card image */
 .service-tag {
     position: absolute;
     top: 15px;
-    right: 15px;
-    background: #e60073;
+    left: 15px;
     color: white;
-    padding: 5px 12px;
+    font-size: 13px;
+    padding: 6px 14px;
     border-radius: 20px;
 }
 
+/* Badge colors per category */
+.makeup  { background: #e60073; }
+.hair    { background: #6c63ff; }
+.facial  { background: #00b894; }
+.nails   { background: #ff9f43; }
+
+/* Card text content */
 .service-content {
     padding: 20px;
 }
 
+.service-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Duration and price row */
 .service-info {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
 .service-price {
     color: #e60073;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Book Now button inside card */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #e60073;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #c40060;
+}
+
+/* View All Services button */
+.view-all-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-view-service {
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: #e60073;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-view-service:hover {
+    background-color: rgb(182, 17, 17);
+}
+
+
+/* ================================================== */
+/*                      FOOTER                        */
+/* ================================================== */
+
+.site-footer {
+    background: #222;
+    color: #ddd;
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 60px 40px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #e60073;
+}
+
+/* Copyright bar at very bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    font-size: 14px;
+}
+
+/* Social media icon circles */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 16px;
+}
+
+.social-icons a:first-child:hover {
+    background: #e60073; /* Instagram - pink */
+    transform: translateY(-3px);
+}
+
+.social-icons a:last-child:hover {
+    background: #1877F2; /* Facebook - blue */
+    transform: translateY(-3px);
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    /* Stack navbar vertically on small screens */
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Remove absolute centering for nav links on mobile */
+    .nav-links {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .why-container h2 {
+        font-size: 2rem;
+    }
+
+    .why-container p {
+        font-size: 1rem;
+    }
 }
