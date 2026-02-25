@@ -1,0 +1,215 @@
+/* ================================================== */
+/*            WELCOME PAGE - SPECIFIC STYLES          */
+/* ================================================== */
+/* This file contains styles ONLY for welcome.php     */
+/* It works together with the main style.css file     */
+/* ================================================== */
+
+
+/* ================================================== */
+/*                  WELCOME HERO BANNER               */
+/* ================================================== */
+
+.welcome-hero {
+    background: linear-gradient(135deg, #e60073, #ff4da6);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+/* Large green checkmark icon at top of hero */
+.welcome-check-icon {
+    font-size: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.95;
+}
+
+.welcome-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.welcome-hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* ================================================== */
+/*              WELCOME DASHBOARD SECTION             */
+/* ================================================== */
+
+.welcome-section {
+    padding: 60px 20px;
+    background-color: #fff0f5;
+}
+
+/* Two column layout: account info + quick actions */
+.welcome-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ================================================== */
+/*                   WELCOME CARDS                    */
+/* ================================================== */
+
+.welcome-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Card header with icon and title */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff0f5;
+}
+
+.card-header i {
+    font-size: 24px;
+    color: #e60073;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+/* ================================================== */
+/*                  ACCOUNT DETAILS                   */
+/* ================================================== */
+
+.account-details p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+.account-details strong {
+    color: #333;
+}
+
+/* Green active status badge */
+.status-badge {
+    background: #d4edda;
+    color: #155724;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+
+/* ================================================== */
+/*                  QUICK ACTIONS                     */
+/* ================================================== */
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Each action button */
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    background: #fff0f5;
+    color: #333;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border: 1px solid #ffd6e8;
+    transition: 0.3s ease;
+}
+
+.action-btn i {
+    color: #e60073;
+    font-size: 16px;
+    min-width: 18px;
+}
+
+.action-btn:hover {
+    background: #e60073;
+    color: white;
+    border-color: #e60073;
+}
+
+.action-btn:hover i {
+    color: white;
+}
+
+/* Logout button — slightly different style to stand out */
+.logout-btn {
+    background: #fff0f5;
+    border-color: #e60073;
+    color: #e60073;
+}
+
+.logout-btn:hover {
+    background: #c40060;
+    border-color: #c40060;
+    color: white;
+}
+
+
+/* ================================================== */
+/*           LOGGED IN USER IN NAVBAR                 */
+/* ================================================== */
+
+/* Shows the client's name in the navbar */
+.nav-username {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.nav-username i {
+    color: #ff4da6;
+    font-size: 18px;
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    .welcome-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-check-icon {
+        font-size: 45px;
+    }
+
+    /* Stack cards to single column on mobile */
+    .welcome-container {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-card {
+        padding: 25px;
+    }
+}

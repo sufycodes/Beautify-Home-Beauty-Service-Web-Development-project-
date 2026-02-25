@@ -1,0 +1,207 @@
+/* ================================================== */
+/*            LOGIN PAGE - SPECIFIC STYLES            */
+/* ================================================== */
+/* This file contains styles ONLY for login.php       */
+/* It works together with the main style.css file     */
+/* ================================================== */
+
+
+/* ================================================== */
+/*                   PAGE HERO BANNER                 */
+/* ================================================== */
+
+.login-hero {
+    background: linear-gradient(135deg, #e60073, #ff4da6);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.login-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.login-hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* ================================================== */
+/*                LOGIN FORM SECTION                  */
+/* ================================================== */
+
+.login-section {
+    padding: 60px 20px;
+    background-color: #fff0f5;
+}
+
+/* Form card container — narrower than register since fewer fields */
+.login-form-container {
+    background: #ffffff;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Pink lock icon at the top of the form */
+.login-icon {
+    width: 70px;
+    height: 70px;
+    background: #fff0f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    border: 2px solid #ffd6e8;
+}
+
+.login-icon i {
+    font-size: 28px;
+    color: #e60073;
+}
+
+.login-form-container h2 {
+    font-size: 1.8rem;
+    color: #e60073;
+    margin-bottom: 8px;
+}
+
+/* Subtitle under heading */
+.form-subtitle {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+
+/* ================================================== */
+/*                   FORM FIELDS                      */
+/* ================================================== */
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 7px;
+}
+
+.form-group label i {
+    color: #e60073;
+    margin-right: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fafafa;
+    transition: border 0.3s ease;
+}
+
+/* Highlight field border on focus */
+.form-group input:focus {
+    outline: none;
+    border-color: #e60073;
+    background: #ffffff;
+}
+
+
+/* ================================================== */
+/*                   LOGIN BUTTON                     */
+/* ================================================== */
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #e60073;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login i {
+    margin-left: 8px;
+}
+
+.btn-login:hover {
+    background: #c40060;
+}
+
+
+/* ================================================== */
+/*              DON'T HAVE ACCOUNT LINK               */
+/* ================================================== */
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-link a {
+    color: #e60073;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================================== */
+/*               ERROR MESSAGE BOX                    */
+/* ================================================== */
+
+/* Shown when login fails (wrong username/password) */
+.error-message {
+    background: #ffe0e0;
+    color: #cc0000;
+    border: 1px solid #ffaaaa;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.error-message i {
+    margin-right: 8px;
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    .login-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .login-form-container {
+        padding: 30px 20px;
+    }
+}

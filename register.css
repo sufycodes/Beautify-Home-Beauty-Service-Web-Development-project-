@@ -1,0 +1,190 @@
+/* ================================================== */
+/*           REGISTER PAGE - SPECIFIC STYLES          */
+/* ================================================== */
+/* This file contains styles ONLY for register.php    */
+/* It works together with the main style.css file     */
+/* ================================================== */
+
+
+/* ================================================== */
+/*                   PAGE HERO BANNER                 */
+/* ================================================== */
+
+.register-hero {
+    background: linear-gradient(135deg, #e60073, #ff4da6);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.register-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.register-hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* ================================================== */
+/*              REGISTRATION FORM SECTION             */
+/* ================================================== */
+
+.register-section {
+    padding: 60px 20px;
+    background-color: #fff0f5;
+}
+
+/* Form card container */
+.register-form-container {
+    background: #ffffff;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.register-form-container h2 {
+    font-size: 1.8rem;
+    color: #e60073;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* Subtitle under heading */
+.form-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+
+/* ================================================== */
+/*                   FORM LAYOUT                      */
+/* ================================================== */
+
+/* Two column row layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Each individual field group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Field label */
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 7px;
+}
+
+.form-group label i {
+    color: #e60073;
+    margin-right: 6px;
+}
+
+/* Input and textarea fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fafafa;
+    transition: border 0.3s ease;
+}
+
+/* Highlight field border on focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e60073;
+    background: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ================================================== */
+/*                  REGISTER BUTTON                   */
+/* ================================================== */
+
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background: #e60073;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-register i {
+    margin-left: 8px;
+}
+
+.btn-register:hover {
+    background: #c40060;
+}
+
+
+/* ================================================== */
+/*             ALREADY HAVE ACCOUNT LINK              */
+/* ================================================== */
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #e60073;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================================== */
+/*                  MEDIA QUERIES                     */
+/* ================================================== */
+
+@media (max-width: 768px) {
+
+    .register-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .register-form-container {
+        padding: 30px 20px;
+    }
+
+    /* Stack two column rows to single column on mobile */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

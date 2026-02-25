@@ -1,38 +1,287 @@
-<?php
-include 'db.php';
+<!DOCTYPE html>
+<html lang="en">
 
-if(isset($_POST['register'])){
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautify - Register</title>
 
-    $name = $_POST['full_name'];
-    $dob = $_POST['dob'];
-    $cnic = $_POST['cnic'];
-    $contact = $_POST['contact'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-    $sql = "INSERT INTO clients (full_name,dob,cnic,contact,address,email,username,password)
-            VALUES ('$name','$dob','$cnic','$contact','$address','$email','$username','$password')";
+    <!-- Register Page Stylesheet -->
+    <link rel="stylesheet" href="register.css">
 
-    mysqli_query($conn,$sql);
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-    echo "Registration Successful!";
-}
-?>
+<body>
 
-<form method="POST">
-    <h2>Client Registration</h2>
+    <!-- ================================================== -->
+    <!--                      HEADER                        -->
+    <!-- (Same as home page for consistency)                -->
+    <!-- ================================================== -->
+    <header class="site-header">
 
-    Full Name: <input type="text" name="full_name" required><br><br>
-    Date of Birth: <input type="date" name="dob" required><br><br>
-    CNIC #: <input type="text" name="cnic" required><br><br>
-    Contact #: <input type="text" name="contact" required><br><br>
-    Address: <textarea name="address" required></textarea><br><br>
-    Email: <input type="email" name="email" required><br><br>
-    Username: <input type="text" name="username" required><br><br>
-    Password: <input type="password" name="password" required><br><br>
-    Re-enter Password: <input type="password" name="confirm_password" required><br><br>
+        <!-- Top Title Bar -->
+        <div class="top-bar">
+            <i class="fa-solid fa-house"></i> BEAUTIFY - HOME BEAUTY SERVICES
+        </div>
 
-    <button type="submit" name="register">Register</button>
-</form>
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+
+            <!-- Navigation Links (centered) -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.php">Services</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+
+            <!-- Navigation Action Buttons (right side) -->
+            <div class="nav-actions">
+                <a href="register.php" class="btn-mybooking">Register</a>
+                <a href="login.php" class="btn-booknow">Login</a>
+            </div>
+
+        </nav>
+
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- ================================================== -->
+    <!--                    MAIN CONTENT                    -->
+    <!-- ================================================== -->
+    <main>
+
+        <!-- -------------------- PAGE HERO BANNER -------------------- -->
+        <section class="register-hero">
+            <div class="register-hero-content">
+                <h1>Create Your Account</h1>
+                <p>Register to book your favourite beauty services at home</p>
+            </div>
+        </section>
+        <!-- END PAGE HERO BANNER -->
+
+
+        <!-- -------------------- REGISTRATION FORM SECTION -------------------- -->
+        <section class="register-section">
+
+            <div class="register-form-container">
+
+                <h2>Client Registration</h2>
+                <p class="form-subtitle">Please fill in all the details below to create your account</p>
+
+                <!-- Registration form — submits to register_process.php -->
+                <form action="register_process.php" method="POST">
+
+                    <!-- -------- ROW 1: Full Name + Date of Birth -------- -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="full_name">
+                                <i class="fa-solid fa-user"></i> Full Name
+                            </label>
+                            <input type="text" id="full_name" name="full_name"
+                                placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">
+                                <i class="fa-solid fa-calendar"></i> Date of Birth
+                            </label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+
+                    </div>
+                    <!-- END ROW 1 -->
+
+
+                    <!-- -------- ROW 2: CNIC + Contact Number -------- -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="cnic">
+                                <i class="fa-solid fa-id-card"></i> CNIC #
+                            </label>
+                            <input type="text" id="cnic" name="cnic"
+                                placeholder="e.g. 42101-1234567-1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact">
+                                <i class="fa-solid fa-phone"></i> Contact #
+                            </label>
+                            <input type="text" id="contact" name="contact"
+                                placeholder="e.g. 0300-1234567" required>
+                        </div>
+
+                    </div>
+                    <!-- END ROW 2 -->
+
+
+                    <!-- -------- ROW 3: Complete Address (full width) -------- -->
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fa-solid fa-location-dot"></i> Complete Address
+                        </label>
+                        <textarea id="address" name="address" rows="3"
+                            placeholder="Enter your complete home address" required></textarea>
+                    </div>
+                    <!-- END ROW 3 -->
+
+
+                    <!-- -------- ROW 4: Email + Username -------- -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fa-solid fa-envelope"></i> Email ID
+                            </label>
+                            <input type="email" id="email" name="email"
+                                placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">
+                                <i class="fa-solid fa-circle-user"></i> Username
+                            </label>
+                            <input type="text" id="username" name="username"
+                                placeholder="Choose a username" required>
+                        </div>
+
+                    </div>
+                    <!-- END ROW 4 -->
+
+
+                    <!-- -------- ROW 5: Password + Re-enter Password -------- -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fa-solid fa-lock"></i> Password
+                            </label>
+                            <input type="password" id="password" name="password"
+                                placeholder="Create a password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password">
+                                <i class="fa-solid fa-lock"></i> Re-enter Password
+                            </label>
+                            <input type="password" id="confirm_password" name="confirm_password"
+                                placeholder="Re-enter your password" required>
+                        </div>
+
+                    </div>
+                    <!-- END ROW 5 -->
+
+
+                    <!-- -------- SUBMIT BUTTON -------- -->
+                    <button type="submit" class="btn-register">
+                        Register Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <!-- -------- ALREADY HAVE AN ACCOUNT LINK -------- -->
+                    <p class="login-link">
+                        Already have an account? <a href="login.php">Login here</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+        <!-- END REGISTRATION FORM SECTION -->
+
+    </main>
+    <!-- END MAIN CONTENT -->
+
+
+    <!-- ================================================== -->
+    <!--                      FOOTER                        -->
+    <!-- (Same as home page for consistency)                -->
+    <!-- ================================================== -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <!-- Footer Column 1: Brand Description -->
+            <div class="footer-column">
+                <h3>Beautify</h3>
+                <p>Your premier destination for beauty and wellness services. Experience luxury and care at your doorstep.</p>
+            </div>
+
+            <!-- Footer Column 2: Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.php">Services</a></li>
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Column 3: Service List -->
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li>Hair Styling</li>
+                    <li>Makeup</li>
+                    <li>Massage</li>
+                    <li>Manicure & Pedicure</li>
+                    <li>Facial Treatments</li>
+                </ul>
+            </div>
+
+            <!-- Footer Column 4: Contact Info & Social Media -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
+                <p>+92 300 1234567</p>
+                <p>info@beautify.com</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Copyright Bar -->
+        <div class="footer-bottom">
+            © 2026 Beautify. All rights reserved.
+        </div>
+
+    </footer>
+    <!-- END FOOTER -->
+
+
+    <!-- ================================================== -->
+    <!--        JAVASCRIPT - PASSWORD MATCH VALIDATION      -->
+    <!-- ================================================== -->
+    <script>
+        // Check if both password fields match before form is submitted
+        const form = document.querySelector('form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm_password');
+
+        form.addEventListener('submit', function(e) {
+
+            // If passwords don't match, stop form submission and alert user
+            if (password.value !== confirmPassword.value) {
+                e.preventDefault(); // Stop form from submitting
+                alert('Passwords do not match! Please re-enter your password.');
+                confirmPassword.focus(); // Put cursor back in confirm password field
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
