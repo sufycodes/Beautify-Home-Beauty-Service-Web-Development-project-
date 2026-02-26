@@ -156,18 +156,7 @@
     color: white;
 }
 
-/* Logout button — slightly different style to stand out */
-.logout-btn {
-    background: #fff0f5;
-    border-color: #e60073;
-    color: #e60073;
-}
 
-.logout-btn:hover {
-    background: #c40060;
-    border-color: #c40060;
-    color: white;
-}
 
 
 /* ================================================== */

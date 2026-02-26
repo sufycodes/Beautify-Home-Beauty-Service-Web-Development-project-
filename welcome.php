@@ -66,9 +66,7 @@
                     <i class="fa-solid fa-circle-user"></i>
                     <?php echo htmlspecialchars($client_name); ?>
                 </span>
-                <a href="logout.php" class="btn-booknow">Logout</a>
-            </div>
-
+          
         </nav>
 
     </header>

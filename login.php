@@ -42,8 +42,8 @@
 
             <!-- Navigation Action Buttons (right side) -->
             <div class="nav-actions">
-                <a href="register.php" class="btn-mybooking">Register</a>
-                <a href="login.php" class="btn-booknow">Login</a>
+                <a href="register.php" class="btn-register">Register</a>
+                <!-- <a href="login.php" class="btn-login">Login</a> -->
             </div>
 
         </nav>
