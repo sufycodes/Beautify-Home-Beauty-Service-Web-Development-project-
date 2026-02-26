@@ -20,19 +20,15 @@
 
     <!-- ================================================== -->
     <!--                      HEADER                        -->
-    <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
     <header class="site-header">
 
-        <!-- Top Title Bar -->
         <div class="top-bar">
             <i class="fa-solid fa-house"></i> BEAUTIFY - HOME BEAUTY SERVICES
         </div>
 
-        <!-- Main Navigation -->
         <nav class="main-nav">
 
-            <!-- Navigation Links (centered) -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.php">Services</a></li>
@@ -40,9 +36,8 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
-            <!-- Navigation Action Buttons (right side) -->
+            <!-- Only Login shown on register page -->
             <div class="nav-actions">
-                <!-- <a href="register.php" class="btn-register">Register</a> -->
                 <a href="login.php" class="btn-login">Login</a>
             </div>
 
@@ -75,7 +70,27 @@
                 <h2>Client Registration</h2>
                 <p class="form-subtitle">Please fill in all the details below to create your account</p>
 
-                <!-- Registration form — submits to register_process.php -->
+                <!-- Display error message if registration fails -->
+                <?php if (isset($_GET['error'])): ?>
+                    <div class="registeration-error-message">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <?php
+                            if ($_GET['error'] == 'empty') {
+                                echo 'All fields are required. Please fill in all fields.';
+                            } elseif ($_GET['error'] == 'password') {
+                                echo 'Passwords do not match. Please re-enter your password.';
+                            } elseif ($_GET['error'] == 'username') {
+                                echo 'This username is already taken. Please choose a different username.';
+                            } elseif ($_GET['error'] == 'email') {
+                                echo 'This email is already registered. Please use a different email.';
+                            } elseif ($_GET['error'] == 'failed') {
+                                echo 'Registration failed. Please try again.';
+                            }
+                        ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Registration form submits to register_process.php -->
                 <form action="register_process.php" method="POST">
 
                     <!-- -------- ROW 1: Full Name + Date of Birth -------- -->
@@ -203,19 +218,16 @@
 
     <!-- ================================================== -->
     <!--                      FOOTER                        -->
-    <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
     <footer class="site-footer">
 
         <div class="footer-container">
 
-            <!-- Footer Column 1: Brand Description -->
             <div class="footer-column">
                 <h3>Beautify</h3>
                 <p>Your premier destination for beauty and wellness services. Experience luxury and care at your doorstep.</p>
             </div>
 
-            <!-- Footer Column 2: Quick Links -->
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
@@ -226,7 +238,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 3: Service List -->
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
@@ -238,7 +249,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 4: Contact Info & Social Media -->
             <div class="footer-column">
                 <h4>Contact Us</h4>
                 <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
@@ -252,35 +262,12 @@
 
         </div>
 
-        <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
             © 2026 Beautify. All rights reserved.
         </div>
 
     </footer>
     <!-- END FOOTER -->
-
-
-    <!-- ================================================== -->
-    <!--        JAVASCRIPT - PASSWORD MATCH VALIDATION      -->
-    <!-- ================================================== -->
-    <script>
-        // Check if both password fields match before form is submitted
-        const form = document.querySelector('form');
-        const password = document.getElementById('password');
-        const confirmPassword = document.getElementById('confirm_password');
-
-        form.addEventListener('submit', function(e) {
-
-            // If passwords don't match, stop form submission and alert user
-            if (password.value !== confirmPassword.value) {
-                e.preventDefault(); // Stop form from submitting
-                alert('Passwords do not match! Please re-enter your password.');
-                confirmPassword.focus(); // Put cursor back in confirm password field
-            }
-
-        });
-    </script>
 
 </body>
 

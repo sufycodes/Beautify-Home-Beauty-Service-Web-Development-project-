@@ -5,10 +5,18 @@
 
 
 // ------------------------------------------------
-// Auto create database and table if not exists
-// $conn variable is provided by db_setup.php
+// Connect to the database
 // ------------------------------------------------
-require_once 'db_setup.php';
+$host    = "localhost";
+$dbname  = "beautify";
+$db_user = "root";
+$db_pass = "";
+
+$conn = mysqli_connect($host, $db_user, $db_pass, $dbname);
+
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 
 // ------------------------------------------------
@@ -30,14 +38,16 @@ $confirm_password = trim($_POST['confirm_password']);
 // ------------------------------------------------
 if (empty($full_name) || empty($dob) || empty($cnic) || empty($contact) ||
     empty($address)   || empty($email) || empty($username) || empty($password)) {
-    die("All fields are required. Please go back and fill in all fields.");
+    header("Location: register.php?error=empty");
+    exit();
 }
 
 // ------------------------------------------------
 // Validate - check if passwords match
 // ------------------------------------------------
 if ($password !== $confirm_password) {
-    die("Passwords do not match. Please go back and try again.");
+    header("Location: register.php?error=password");
+    exit();
 }
 
 // ------------------------------------------------
@@ -47,7 +57,8 @@ $check_query  = "SELECT id FROM clients WHERE username = '$username'";
 $check_result = mysqli_query($conn, $check_query);
 
 if (mysqli_num_rows($check_result) > 0) {
-    die("This username is already taken. Please go back and choose a different username.");
+    header("Location: register.php?error=username");
+    exit();
 }
 
 // ------------------------------------------------
@@ -57,7 +68,8 @@ $check_email  = "SELECT id FROM clients WHERE email = '$email'";
 $email_result = mysqli_query($conn, $check_email);
 
 if (mysqli_num_rows($email_result) > 0) {
-    die("This email is already registered. Please go back and use a different email.");
+    header("Location: register.php?error=email");
+    exit();
 }
 
 
@@ -80,7 +92,8 @@ if ($result) {
     header("Location: login.php");
     exit();
 } else {
-    die("Registration failed. Please try again. Error: " . mysqli_error($conn));
+    header("Location: register.php?error=failed");
+    exit();
 }
 
 

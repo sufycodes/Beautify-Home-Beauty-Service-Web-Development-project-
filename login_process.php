@@ -11,10 +11,18 @@ session_start();
 
 
 // ------------------------------------------------
-// Auto create database and table if not exists
-// $conn variable is provided by db_setup.php
+// Connect to the database
 // ------------------------------------------------
-require_once 'db_setup.php';
+$host    = "localhost";
+$dbname  = "beautify";
+$db_user = "root";
+$db_pass = "";
+
+$conn = mysqli_connect($host, $db_user, $db_pass, $dbname);
+
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 
 // ------------------------------------------------

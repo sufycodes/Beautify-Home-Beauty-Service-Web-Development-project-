@@ -40,10 +40,9 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
-            <!-- Navigation Action Buttons (right side) -->
+            <!-- Only Register shown on login page -->
             <div class="nav-actions">
                 <a href="register.php" class="btn-register">Register</a>
-                <!-- <a href="login.php" class="btn-login">Login</a> -->
             </div>
 
         </nav>
@@ -72,7 +71,7 @@
 
             <div class="login-form-container">
 
-                <!-- Lock icon at top -->
+                <!-- Lock icon at top of form -->
                 <div class="login-icon">
                     <i class="fa-solid fa-lock"></i>
                 </div>
@@ -80,12 +79,11 @@
                 <h2>Client Login</h2>
                 <p class="form-subtitle">Enter your username and password to login</p>
 
-                <!-- Display error message from PHP if login fails -->
+                <!-- Display error message if login fails -->
                 <?php if (isset($_GET['error'])): ?>
                     <div class="error-message">
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <?php
-                            // Show appropriate error message based on error type
                             if ($_GET['error'] == 'invalid') {
                                 echo 'Invalid username or password. Please try again.';
                             } elseif ($_GET['error'] == 'empty') {
@@ -95,7 +93,7 @@
                     </div>
                 <?php endif; ?>
 
-                <!-- Login form — submits to login_process.php -->
+                <!-- Login form submits to login_process.php -->
                 <form action="login_process.php" method="POST">
 
                     <!-- Username Field -->
@@ -139,19 +137,16 @@
 
     <!-- ================================================== -->
     <!--                      FOOTER                        -->
-    <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
     <footer class="site-footer">
 
         <div class="footer-container">
 
-            <!-- Footer Column 1: Brand Description -->
             <div class="footer-column">
                 <h3>Beautify</h3>
                 <p>Your premier destination for beauty and wellness services. Experience luxury and care at your doorstep.</p>
             </div>
 
-            <!-- Footer Column 2: Quick Links -->
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
@@ -162,7 +157,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 3: Service List -->
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
@@ -174,7 +168,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 4: Contact Info & Social Media -->
             <div class="footer-column">
                 <h4>Contact Us</h4>
                 <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
@@ -188,7 +181,6 @@
 
         </div>
 
-        <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
             © 2026 Beautify. All rights reserved.
         </div>

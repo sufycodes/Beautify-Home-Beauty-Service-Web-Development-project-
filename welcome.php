@@ -1,3 +1,20 @@
+<?php
+// ------------------------------------------------
+// Session check must be at the very top of the file
+// before any HTML output
+// ------------------------------------------------
+session_start();
+
+// If user is not logged in redirect to login page
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Get client info from session
+$client_name = $_SESSION['full_name'];
+$username    = $_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,26 +31,6 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <?php
-        // ------------------------------------------------
-        // SESSION CHECK
-        // Start the session and check if the user is logged in.
-        // If not logged in, redirect them to the login page.
-        // This protects the welcome page from being accessed
-        // directly without logging in first.
-        // ------------------------------------------------
-        session_start();
-
-        if (!isset($_SESSION['username'])) {
-            header("Location: login.php");
-            exit();
-        }
-
-        // Get the client's name from the session
-        $client_name = $_SESSION['full_name'];
-        $username    = $_SESSION['username'];
-    ?>
 </head>
 
 <body>
@@ -60,13 +57,17 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
-            <!-- Show logged in user name and logout button on right -->
+            <!-- Show client name, Book Now, My Booking and Logout after login -->
             <div class="nav-actions">
                 <span class="nav-username">
                     <i class="fa-solid fa-circle-user"></i>
                     <?php echo htmlspecialchars($client_name); ?>
                 </span>
-          
+                <a href="services.php" class="btn-booknow">Book Now</a>
+                <a href="#" class="btn-mybooking">My Booking</a>
+                <a href="logout.php" class="btn-logout">Logout</a>
+            </div>
+
         </nav>
 
     </header>
@@ -146,19 +147,16 @@
 
     <!-- ================================================== -->
     <!--                      FOOTER                        -->
-    <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
     <footer class="site-footer">
 
         <div class="footer-container">
 
-            <!-- Footer Column 1: Brand Description -->
             <div class="footer-column">
                 <h3>Beautify</h3>
                 <p>Your premier destination for beauty and wellness services. Experience luxury and care at your doorstep.</p>
             </div>
 
-            <!-- Footer Column 2: Quick Links -->
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <ul>
@@ -169,7 +167,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 3: Service List -->
             <div class="footer-column">
                 <h4>Services</h4>
                 <ul>
@@ -181,7 +178,6 @@
                 </ul>
             </div>
 
-            <!-- Footer Column 4: Contact Info & Social Media -->
             <div class="footer-column">
                 <h4>Contact Us</h4>
                 <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
@@ -195,7 +191,6 @@
 
         </div>
 
-        <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
             © 2026 Beautify. All rights reserved.
         </div>

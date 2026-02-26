@@ -113,6 +113,30 @@
     font-weight: bold;
 }
 
+/* MyBooking And Logout Button  */
+.btn-booknow,
+.btn-mybooking,
+.btn-logout{
+     background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-booknow:hover,
+.btn-mybooking:hover{
+    background-color: #ff4da6;
+}
+
+.btn-logout:hover{
+    background-color:#e60073;
+}
+
+
+    
+
+
 
 /* ================================================== */
 /*                  QUICK ACTIONS                     */
@@ -158,15 +182,14 @@
 
 
 
-
 /* ================================================== */
 /*           LOGGED IN USER IN NAVBAR                 */
 /* ================================================== */
 
 /* Shows the client's name in the navbar */
 .nav-username {
-    color: white;
-    font-size: 14px;
+    color: papayawhip;
+    font-size: 20px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -175,7 +198,7 @@
 
 .nav-username i {
     color: #ff4da6;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 
