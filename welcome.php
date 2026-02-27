@@ -49,7 +49,7 @@ $username    = $_SESSION['username'];
         <!-- Main Navigation -->
         <nav class="main-nav">
 
-            <!-- Navigation Links (centered) -->
+        <!-- Navigation Links (centered) -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.php">Services</a></li>
@@ -57,16 +57,17 @@ $username    = $_SESSION['username'];
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
-            <!-- Show client name, Book Now, My Booking and Logout after login -->
-            <div class="nav-actions">
-                <span class="nav-username">
-                    <i class="fa-solid fa-circle-user"></i>
-                    <?php echo htmlspecialchars($client_name); ?>
-                </span>
-                <a href="services.php" class="btn-booknow">Book Now</a>
-                <a href="#" class="btn-mybooking">My Booking</a>
-                <a href="logout.php" class="btn-logout">Logout</a>
-            </div>
+        <!-- Show client name, Book Now, Logout after login -->  
+           <span class="nav-username">
+               <i class="fa-solid fa-circle-user"></i>
+               <?php echo htmlspecialchars($client_name); ?>
+           </span>
+
+           <div class="nav-actions">
+               <a href="services.php" class="btn-booknow">Book Now</a>
+               <a href="logout.php" class="btn-logout">Logout</a>
+           </div>
+
 
         </nav>
 

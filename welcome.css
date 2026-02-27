@@ -113,28 +113,52 @@
     font-weight: bold;
 }
 
-/* MyBooking And Logout Button  */
+/* Book Now My Booking And Logout Button  */
 .btn-booknow,
-.btn-mybooking,
-.btn-logout{
-     background: white;
+.btn-logout {
+    background: white;
     color: black;
     padding: 5px 10px;
     border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
 }
-.btn-booknow:hover,
-.btn-mybooking:hover{
+
+.btn-booknow:hover {
     background-color: #ff4da6;
 }
 
-.btn-logout:hover{
-    background-color:#e60073;
+.btn-logout:hover {
+    background-color: #e60073;
 }
 
+/* ================================================== */
+/*           LOGGED IN USER IN NAVBAR                 */
+/* ================================================== */
 
-    
+/* Shows the client's name in the navbar */
+
+.nav-username {
+    color: papayawhip;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.nav-username i {
+    color: #ff4da6;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nav-username:hover,
+.nav-username i:hover {
+    color: palevioletred;
+
+}
 
 
 
@@ -181,25 +205,6 @@
 }
 
 
-
-/* ================================================== */
-/*           LOGGED IN USER IN NAVBAR                 */
-/* ================================================== */
-
-/* Shows the client's name in the navbar */
-.nav-username {
-    color: papayawhip;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.nav-username i {
-    color: #ff4da6;
-    font-size: 25px;
-}
 
 
 /* ================================================== */
