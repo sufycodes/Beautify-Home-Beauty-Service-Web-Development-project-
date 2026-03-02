@@ -62,6 +62,28 @@ if (mysqli_num_rows($check_result) > 0) {
 }
 
 // ------------------------------------------------
+// Check if CNIC already exists in database
+// ------------------------------------------------
+$check_cnic   = "SELECT id FROM clients WHERE cnic = '$cnic'";
+$cnic_result  = mysqli_query($conn, $check_cnic);
+
+if (mysqli_num_rows($cnic_result) > 0) {
+    header("Location: register.php?error=cnic");
+    exit();
+}
+    
+// ------------------------------------------------
+// Check if contact number already exists in database
+// ------------------------------------------------
+$check_contact   = "SELECT id FROM clients WHERE contact = '$contact'";
+$contact_result  = mysqli_query($conn, $check_contact);
+
+if (mysqli_num_rows($contact_result) > 0) {
+    header("Location: register.php?error=contact");
+    exit();
+}
+
+// ------------------------------------------------
 // Check if email already exists in database
 // ------------------------------------------------
 $check_email  = "SELECT id FROM clients WHERE email = '$email'";

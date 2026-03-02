@@ -216,4 +216,19 @@
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
-      
+
+                 </div>
+
+        </div>
+        
+      <!-- Footer Copyright Bar -->
+        <div class="footer-bottom">
+            © 2026 Beautify. All rights reserved.
+        </div>
+
+    </footer>
+      <!-- END FOOTER -->
+ </body>
+
+
+</html>

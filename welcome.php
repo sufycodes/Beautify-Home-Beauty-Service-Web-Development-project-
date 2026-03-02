@@ -1,7 +1,6 @@
 <?php
 // ------------------------------------------------
-// Session check must be at the very top of the file
-// before any HTML output
+// Session check 
 // ------------------------------------------------
 session_start();
 
@@ -130,7 +129,7 @@ $username    = $_SESSION['username'];
                         <a href="contact.php" class="action-btn">
                             <i class="fa-solid fa-headset"></i> Contact Support
                         </a>
-                        <a href="logout.php" class="action-btn logout-btn">
+                        <a href="login.php" class="action-btn logout-btn">
                             <i class="fa-solid fa-right-from-bracket"></i> Logout
                         </a>
                     </div>

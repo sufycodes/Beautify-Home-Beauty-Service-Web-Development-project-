@@ -75,7 +75,7 @@
 
                 <!-- Display error message if registration fails -->
                 <?php if (isset($_GET['error'])): ?>
-                    <div class="error-message"> 
+                    <div class="registeration-error-message"> 
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <?php
                             if ($_GET['error'] == 'empty') {
@@ -85,7 +85,11 @@
                             } elseif ($_GET['error'] == 'username') {
                                 echo 'This username is already taken. Please choose a different username.';
                             } elseif ($_GET['error'] == 'email') {
-                                echo 'This email is already registered. Please use a different email.';
+                                echo 'This email is already registered. Please use a different email.';  
+                            } elseif ($_GET['error'] == 'cnic') {
+                                echo 'This CNIC is already registered. Please check your CNIC number.';
+                            } elseif ($_GET['error'] == 'contact') {
+                                echo 'This contact number is already registered. Please use a different number.';                      
                             } elseif ($_GET['error'] == 'failed') {
                                 echo 'Registration failed. Please try again.';
                             }

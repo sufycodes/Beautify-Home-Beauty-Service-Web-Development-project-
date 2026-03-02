@@ -1,8 +1,10 @@
 ================================================
   BEAUTIFY - Home Beauty Services
-  Prototype Setup Instructions
+  F25PROJECT01FC5 (BC220418008)
+  CS619-FINAL YEAR PROJECT PROTOTYPE
 ================================================
-
+ Prototype Setup Instructions
+------------------------------------------------
 REQUIREMENTS:
   - XAMPP (Apache + MySQL)
   - Web Browser

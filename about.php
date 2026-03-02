@@ -196,7 +196,7 @@
 
     <!-- ================================================== -->
     <!--                      FOOTER                        -->
-    <!-- (Same as home page for consistency)                -->
+    <!--        (Same as home page for consistency)         -->
     <!-- ================================================== -->
     <footer class="site-footer">
 
@@ -248,4 +248,13 @@
 
         <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
-          
+            © 2026 Beautify. All rights reserved.
+        </div>
+
+    </footer>
+      <!-- END FOOTER -->
+ </body>
+
+
+</html>
+

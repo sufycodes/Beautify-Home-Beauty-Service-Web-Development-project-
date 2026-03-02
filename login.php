@@ -181,5 +181,18 @@
 
         </div>
 
+        
+        <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
+            © 2026 Beautify. All rights reserved.
+        </div>
+
+    </footer>
+      <!-- END FOOTER -->
+ </body>
+
+
+</html>
+
+        
           
