@@ -23,12 +23,15 @@
     <!-- ================================================== -->
     <header class="site-header">
 
+        <!-- Top Title Bar -->
         <div class="top-bar">
             <i class="fa-solid fa-house"></i> BEAUTIFY - HOME BEAUTY SERVICES
         </div>
 
+        <!-- Main Navigation -->
         <nav class="main-nav">
 
+            <!-- Navigation Links (centered) -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.php">Services</a></li>
@@ -72,7 +75,7 @@
 
                 <!-- Display error message if registration fails -->
                 <?php if (isset($_GET['error'])): ?>
-                    <div class="registeration-error-message">
+                    <div class="error-message"> 
                         <i class="fa-solid fa-circle-exclamation"></i>
                         <?php
                             if ($_GET['error'] == 'empty') {

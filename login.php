@@ -172,7 +172,7 @@
                 <h4>Contact Us</h4>
                 <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
                 <p>+92 300 1234567</p>
-                <p>info@beautify.com</p>
+                <p><a href="#"></a>info@beautify.com</p>
                 <div class="social-icons">
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -182,12 +182,4 @@
         </div>
 
         <div class="footer-bottom">
-            © 2026 Beautify. All rights reserved.
-        </div>
-
-    </footer>
-    <!-- END FOOTER -->
-
-</body>
-
-</html>
+          

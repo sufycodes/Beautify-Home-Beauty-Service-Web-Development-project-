@@ -235,8 +235,8 @@
             <!-- Footer Column 4: Contact Info & Social Media -->
             <div class="footer-column">
                 <h4>Contact Us</h4>
-                <p>123 Beauty Street, Fashion District, NY 10001</p>
-                <p>(555) 123-4567</p>
+                <p>123 Beauty Street, Fashion District, Karachi, Pakistan</p>
+                <p>+92 300 1234567</p>
                 <p>info@beautify.com</p>
                 <div class="social-icons">
                     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -248,12 +248,4 @@
 
         <!-- Footer Copyright Bar -->
         <div class="footer-bottom">
-            © 2026 Beautify. All rights reserved.
-        </div>
-
-    </footer>
-    <!-- END FOOTER -->
-
-</body>
-
-</html>
+          
