@@ -1,24 +1,23 @@
-================================================
   BEAUTIFY - Home Beauty Services
   F25PROJECT01FC5 (BC220418008)
   CS619-FINAL YEAR PROJECT PROTOTYPE
-================================================
- Prototype Setup Instructions
+
+Prototype Setup Instructions
 ------------------------------------------------
 REQUIREMENTS:
   - XAMPP (Apache + MySQL)
   - Web Browser
 
-------------------------------------------------
+
 STEP 1 - START XAMPP
-------------------------------------------------
+
   1. Open XAMPP Control Panel
   2. Click Start next to Apache
   3. Click Start next to MySQL
 
-------------------------------------------------
+
 STEP 2 - IMPORT DATABASE
-------------------------------------------------
+
   1. Open browser and go to:
      http://localhost/phpmyadmin
   2. Click "New" on the left sidebar
@@ -28,19 +27,15 @@ STEP 2 - IMPORT DATABASE
   6. Click "Choose File" and select "beautify.sql"
   7. Click Go
 
-------------------------------------------------
+
 STEP 3 - ADD PROJECT FILES
-------------------------------------------------
+
   1. Copy the entire project folder into:
      C:/xampp/htdocs/
 
-------------------------------------------------
 STEP 4 - RUN THE PROJECT
-------------------------------------------------
   1. Open browser and go to:
      http://localhost/beautify/
 
-================================================
-  The website is ready to use.
   Register a new client to test the system.
-================================================
+

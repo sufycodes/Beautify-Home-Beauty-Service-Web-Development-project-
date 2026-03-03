@@ -1,7 +1,5 @@
 <?php
-// ------------------------------------------------
 // Session check 
-// ------------------------------------------------
 session_start();
 
 // If user is not logged in redirect to login page
@@ -34,9 +32,9 @@ $username    = $_SESSION['username'];
 
 <body>
 
-    <!-- ================================================== -->
+    
     <!--                      HEADER                        -->
-    <!-- (Same as home page for consistency)                -->
+    <!--                (Same as home page)                   ->
     <!-- ================================================== -->
     <header class="site-header">
 
@@ -74,7 +72,7 @@ $username    = $_SESSION['username'];
     <!-- END HEADER -->
 
 
-    <!-- ================================================== -->
+    
     <!--                    MAIN CONTENT                    -->
     <!-- ================================================== -->
     <main>
@@ -145,7 +143,7 @@ $username    = $_SESSION['username'];
     <!-- END MAIN CONTENT -->
 
 
-    <!-- ================================================== -->
+    
     <!--                      FOOTER                        -->
     <!-- ================================================== -->
     <footer class="site-footer">

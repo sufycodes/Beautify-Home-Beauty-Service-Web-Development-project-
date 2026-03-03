@@ -1,7 +1,5 @@
 <?php
-// ================================================== //
 //                  LOGOUT - BACKEND                  //
-// ================================================== //
 
 // Start the session so we can access and destroy it
 session_start();

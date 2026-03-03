@@ -1,16 +1,14 @@
--- ==================================================
--- Beautify - Home Beauty Services
+
 -- Database File
--- ==================================================
 
 -- Create and select the database
 CREATE DATABASE IF NOT EXISTS beautify;
 USE beautify;
 
--- --------------------------------------------------
+
 -- Table: clients
 -- Stores all registered client information
--- --------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS clients (
     id         INT AUTO_INCREMENT PRIMARY KEY,
     full_name  VARCHAR(100) NOT NULL,

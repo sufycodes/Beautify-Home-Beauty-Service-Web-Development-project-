@@ -1,18 +1,12 @@
 <?php
-// ================================================== //
 //               LOGIN PROCESS - BACKEND              //
-// ================================================== //
 
-
-// ------------------------------------------------
-// Start the session to store logged in user data
-// ------------------------------------------------
+//  Start the session to store logged in user data
 session_start();
 
 
-// ------------------------------------------------
+
 // Connect to the database
-// ------------------------------------------------
 $host    = "localhost";
 $dbname  = "beautify";
 $db_user = "root";
@@ -25,25 +19,21 @@ if (!$conn) {
 }
 
 
-// ------------------------------------------------
 // Get username and password from the login form
-// ------------------------------------------------
 $username = trim($_POST['username']);
 $password = trim($_POST['password']);
 
 
-// ------------------------------------------------
+
 // Check if fields are empty
-// ------------------------------------------------
 if (empty($username) || empty($password)) {
     header("Location: login.php?error=empty");
     exit();
 }
 
 
-// ------------------------------------------------
+
 // Search for the username in the database
-// ------------------------------------------------
 $query  = "SELECT * FROM clients WHERE username = '$username'";
 $result = mysqli_query($conn, $query);
 
@@ -51,10 +41,8 @@ if (mysqli_num_rows($result) == 1) {
 
     $client = mysqli_fetch_assoc($result);
 
-    // ------------------------------------------------
-    // Verify entered password against encrypted password
-    // ------------------------------------------------
-    if (password_verify($password, $client['password'])) {
+        // Verify entered password against encrypted password
+     if (password_verify($password, $client['password'])) {
 
         // Password correct - store client info in session
         $_SESSION['username']  = $client['username'];
@@ -78,8 +66,6 @@ if (mysqli_num_rows($result) == 1) {
 }
 
 
-// ------------------------------------------------
-// Close the database connection
-// ------------------------------------------------
+// Close Database Connection
 mysqli_close($conn);
 ?>

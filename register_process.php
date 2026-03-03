@@ -1,12 +1,10 @@
 <?php
-// ================================================== //
 //              REGISTER PROCESS - BACKEND            //
-// ================================================== //
 
 
-// ------------------------------------------------
+
+
 // Connect to the database
-// ------------------------------------------------
 $host    = "localhost";
 $dbname  = "beautify";
 $db_user = "root";
@@ -19,9 +17,8 @@ if (!$conn) {
 }
 
 
-// ------------------------------------------------
+
 // Get data sent from the registration form
-// ------------------------------------------------
 $full_name        = trim($_POST['full_name']);
 $dob              = trim($_POST['dob']);
 $cnic             = trim($_POST['cnic']);
@@ -33,26 +30,24 @@ $password         = trim($_POST['password']);
 $confirm_password = trim($_POST['confirm_password']);
 
 
-// ------------------------------------------------
+
 // Validate - check if any field is empty
-// ------------------------------------------------
 if (empty($full_name) || empty($dob) || empty($cnic) || empty($contact) ||
     empty($address)   || empty($email) || empty($username) || empty($password)) {
     header("Location: register.php?error=empty");
     exit();
 }
 
-// ------------------------------------------------
+
 // Validate - check if passwords match
-// ------------------------------------------------
 if ($password !== $confirm_password) {
     header("Location: register.php?error=password");
     exit();
 }
 
-// ------------------------------------------------
+
 // Check if username already exists in database
-// ------------------------------------------------
+
 $check_query  = "SELECT id FROM clients WHERE username = '$username'";
 $check_result = mysqli_query($conn, $check_query);
 
@@ -61,9 +56,8 @@ if (mysqli_num_rows($check_result) > 0) {
     exit();
 }
 
-// ------------------------------------------------
+
 // Check if CNIC already exists in database
-// ------------------------------------------------
 $check_cnic   = "SELECT id FROM clients WHERE cnic = '$cnic'";
 $cnic_result  = mysqli_query($conn, $check_cnic);
 
@@ -72,9 +66,9 @@ if (mysqli_num_rows($cnic_result) > 0) {
     exit();
 }
     
-// ------------------------------------------------
+
 // Check if contact number already exists in database
-// ------------------------------------------------
+
 $check_contact   = "SELECT id FROM clients WHERE contact = '$contact'";
 $contact_result  = mysqli_query($conn, $check_contact);
 
@@ -83,9 +77,9 @@ if (mysqli_num_rows($contact_result) > 0) {
     exit();
 }
 
-// ------------------------------------------------
+
 // Check if email already exists in database
-// ------------------------------------------------
+
 $check_email  = "SELECT id FROM clients WHERE email = '$email'";
 $email_result = mysqli_query($conn, $check_email);
 
@@ -95,15 +89,13 @@ if (mysqli_num_rows($email_result) > 0) {
 }
 
 
-// ------------------------------------------------
+
 // Encrypt the password before saving to database
-// ------------------------------------------------
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
-// ------------------------------------------------
+
 // Insert client data into the clients table
-// ------------------------------------------------
 $query = "INSERT INTO clients (full_name, dob, cnic, contact, address, email, username, password)
           VALUES ('$full_name', '$dob', '$cnic', '$contact', '$address', '$email', '$username', '$hashed_password')";
 
@@ -119,8 +111,7 @@ if ($result) {
 }
 
 
-// ------------------------------------------------
+
 // Close the database connection
-// ------------------------------------------------
 mysqli_close($conn);
 ?>

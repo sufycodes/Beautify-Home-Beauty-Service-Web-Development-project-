@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- ================================================== -->
+    
     <!--                      HEADER                        -->
     <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
@@ -52,7 +52,7 @@
     <!-- END HEADER -->
 
 
-    <!-- ================================================== -->
+    
     <!--                    MAIN CONTENT                    -->
     <!-- ================================================== -->
     <main>
@@ -93,7 +93,7 @@
         <!-- END FILTER BUTTONS -->
 
 
-        <!-- ================================================== -->
+        
         <!--                   SERVICE CARDS                     -->
         <!-- ================================================== -->
         <section class="services-section">
@@ -185,7 +185,7 @@
                         <div class="service-info">
                             <span><i class="fa-regular fa-clock"></i> 60min</span>
                             <span class="service-price">Rs. 2,000</span>
-                        </div>
+                        </div>  
                         <button class="btn-primary">Book Now</button>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                             <span class="service-price">Rs. 2,500</span>
                         </div>
                         <button class="btn-primary">Book Now</button>
-                    </div>
+                    </div>  
                 </div>
 
 
@@ -325,7 +325,7 @@
     <!-- END MAIN CONTENT -->
 
 
-    <!-- ================================================== -->
+    
     <!--                      FOOTER                        -->
     <!-- (Same as home page for consistency)                -->
     <!-- ================================================== -->
@@ -386,7 +386,7 @@
     <!-- END FOOTER -->
 
 
-    <!-- ================================================== -->
+
     <!--           JAVASCRIPT - CATEGORY FILTER             -->
     <!-- ================================================== -->
     <script>
@@ -398,19 +398,19 @@
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
 
-                // Step 1: Remove 'active' class from all buttons, add to clicked one
+                //  Remove 'active' class from all buttons, add to clicked one
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                // Step 2: Get the category from the clicked button's data-filter attribute
+                // Get the category from the clicked button's data-filter attribute
                 const selectedFilter = button.getAttribute('data-filter');
 
-                // Step 3: Show or hide cards based on their data-category attribute
+                // Show or hide cards based on their data-category attribute
                 serviceCards.forEach(card => {
                     if (selectedFilter === 'all' || card.getAttribute('data-category') === selectedFilter) {
-                        card.style.display = 'block'; // Show matching cards
+                        card.style.display = 'block'; 
                     } else {
-                        card.style.display = 'none';  // Hide non-matching cards
+                        card.style.display = 'none';  
                     }
                 });
 
